@@ -1,0 +1,15 @@
+<div class="row g-4 p-4 align-items-center">
+  <div class="col-12 col-md-6">
+    <img [src]="productDetalis?.image" class="border-2 border-2 rounded-5 border-danger-subtle object-fit-cover w-50">
+  </div>
+  <div class="details col-12 col-md-6">
+    <p class="fs-2">{{productDetalis?.title}}</p>
+    <p class="text-black-50">{{productDetalis?. description}}</p>
+    <p class="fs-5">category: {{productDetalis?. category}}</p>
+    <p class="fs-3">{{productDetalis?. rating.rate}} <i class="bi bi-star-fill text-warning"></i> / 5</p>
+    <div class="d-flex justify-content-start align-items-center gap-5">
+      <p class="fw-bold fs-1">{{productDetalis?.price|currency}}</p>
+
+    </div>
+  </div>
+</div>

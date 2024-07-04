@@ -1,0 +1,31 @@
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top bg-primary-subtle p-0 shadow">
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="['home']">
+      <img src="../../../assets/logo/—Pngtree—store icon in line style_5053711.png" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav d-flex justify-content-center align-items-center gap-5">
+        <li class="nav-item">
+          <a class="nav-link active text-bg-primary rounded-pill" aria-current="page" [routerLink]="['home']"
+            routerLinkActive="text-bg-primary rounded-pill p-2">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['cart']"><i class="bi bi-cart-dash fs-2 position-relative"
+              routerLinkActive="text-bg-primary rounded p-2">
+              <span class="position-absolute top-0 start-100  badge rounded-pill bg-danger fs-5" *ngIf="cartNum>0">
+                {{cartNum}}
+              </span>
+            </i>
+            </a>
+        </li>
+        
+
+      </ul>
+    </div>
+  </div>
+</nav>

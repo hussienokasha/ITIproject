@@ -1,0 +1,48 @@
+<div class="tbl" *ngIf="cartArr.length>0">
+  <table class="table table-info table-hover m-4">
+    <tr>
+      <th>#</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Qty</th>
+      <th>Action</th>
+    </tr>
+    <tbody class="table-group-divider">
+      <tr *ngFor="let cart of cartArr;let i = index">
+        <td>{{i+1}}</td>
+        <td>
+          <img [src]="cart.element.image" alt="" class=" object-fit-cover">
+        </td>
+        <td class="text-truncate">
+          {{cart.element.title}}
+        </td>
+
+        <td>
+          {{cart.element.price*cart.quantity|currency}}
+        </td>
+        <td>
+          <input type="number" class="form-control" min="1" value="1" [(ngModel)]="cart.quantity" max="50"
+            (change)="calcTotalPrice()">
+          <span *ngIf="cart.quantity>=50" class="text-danger">must less than 50</span>
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="delateItem(cart.element.id)">Delete</button>
+        </td>
+      </tr>
+
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="5"></td>
+        <td>
+          <div class="d-flex justify-content-end align-items-center me-5">
+            <p class="fs-5 fw-bolder">Total Price</p>
+            <p class="fs-4">{{totalPrice|currency}}</p>
+          </div>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+<div *ngIf="cartArr.length==0" class="m-auto fs-2 mt-5">No Data in Cart :(</div>

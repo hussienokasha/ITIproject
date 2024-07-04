@@ -1,0 +1,12 @@
+img {
+  height: 120px;
+}
+.tbl {
+  width: 100%;
+  min-width: 400px;
+  overflow: auto;
+}
+table
+{
+  max-width: 100%;
+}

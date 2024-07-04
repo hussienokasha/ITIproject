@@ -1,0 +1,13 @@
+<div class="row justify-content-center align-items-center p-5">
+  <div class="col-12 col-md-4 col-lg-3 g-4" *ngFor="let element of allproducts">
+    <div class="card">
+      <img [src]="element.image" class="card-img-top p-3 object-fit-cover" [routerLink]="['/product',element.id]">
+      <div class="card-body">
+        <h5 class="card-title fs-5 text-truncate">{{element.title}}</h5>
+        <h4 class="bg-primary-subtle w-auto p-2 rounded-pill">{{element.price|currency}}</h4>
+        <p  class="btn btn-primary m-0 mt-3" (click)="addToCart(element)">Add To Cart <i class="bi bi-cart-dash" ></i></p>
+      </div>
+    </div>
+  </div>
+</div>
+<app-spinner *ngIf="!dataCompleted"></app-spinner>
